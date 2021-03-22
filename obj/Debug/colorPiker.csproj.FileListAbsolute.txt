@@ -1,0 +1,10 @@
+C:\Users\ACER\Documents\PROJECTS\colorPiker\bin\Debug\colorPiker.exe.config
+C:\Users\ACER\Documents\PROJECTS\colorPiker\bin\Debug\colorPiker.exe
+C:\Users\ACER\Documents\PROJECTS\colorPiker\bin\Debug\colorPiker.pdb
+C:\Users\ACER\Documents\PROJECTS\colorPiker\obj\Debug\colorPiker.csprojAssemblyReference.cache
+C:\Users\ACER\Documents\PROJECTS\colorPiker\obj\Debug\colorPiker.Form1.resources
+C:\Users\ACER\Documents\PROJECTS\colorPiker\obj\Debug\colorPiker.Properties.Resources.resources
+C:\Users\ACER\Documents\PROJECTS\colorPiker\obj\Debug\colorPiker.csproj.GenerateResource.cache
+C:\Users\ACER\Documents\PROJECTS\colorPiker\obj\Debug\colorPiker.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\PROJECTS\colorPiker\obj\Debug\colorPiker.exe
+C:\Users\ACER\Documents\PROJECTS\colorPiker\obj\Debug\colorPiker.pdb
