@@ -14,7 +14,7 @@ namespace colorPiker
     {
         public float C, X, M, R, G, B, H, S, V, H1, S1, V1;
         public int R1, G1, B1;
-        public Boolean ClrScheeme1;
+        public Boolean ClrScheeme1, tone_sec_active;
 
 
 
@@ -22,7 +22,20 @@ namespace colorPiker
         {
             InitializeComponent();
             ClrScheeme1 = true;
+            tone_sec.Hide();
+            tone_sec_active = false;
+            alpha.Value = 255;
 
+        }
+
+        private void tone_togle_Click(object sender, EventArgs e)
+        {
+            if(!tone_sec_active)
+                tone_sec.Show();
+            else
+                tone_sec.Hide();
+
+            tone_sec_active = !tone_sec_active;
         }
 
         public float Max(float n1, float n2, float n3)
@@ -37,6 +50,183 @@ namespace colorPiker
                 return n3;
 
             return 0;
+        }
+
+        private void tnSc1_Click(object sender, EventArgs e)
+        {
+            toggleHSV();
+
+            red_scale.Maximum = 360;
+            green_scale.Maximum = 100;
+            blue_scale.Maximum = 100;
+
+            red_scale.Minimum = 0;
+            green_scale.Minimum = 0;
+            blue_scale.Minimum = 0;
+
+            green_scale.Value = 75;
+            green_scale.Maximum = 83;
+            green_scale.Minimum = 73; 
+            
+
+            blue_scale.Value = 65;
+            blue_scale.Maximum = 76;
+            blue_scale.Minimum = 56;
+            
+
+            tone_sec.Hide();
+            tone_sec_active = false;
+        }
+
+        private void tnSc2_Click(object sender, EventArgs e)
+        {
+            toggleHSV();
+
+            red_scale.Maximum = 360;
+            green_scale.Maximum = 100;
+            blue_scale.Maximum = 100;
+
+            red_scale.Minimum = 0;
+            green_scale.Minimum = 0;
+            blue_scale.Minimum = 0;
+
+            green_scale.Value = 5;
+            green_scale.Maximum = 10;
+            green_scale.Minimum = 1;
+            
+
+            blue_scale.Value = 80;
+            blue_scale.Maximum = 99;
+            blue_scale.Minimum = 70;
+            
+
+            tone_sec.Hide();
+            tone_sec_active = false;
+        }
+
+        private void tnSc3_Click(object sender, EventArgs e)
+        {
+            toggleHSV();
+
+            red_scale.Maximum = 360;
+            green_scale.Maximum = 100;
+            blue_scale.Maximum = 100;
+
+            red_scale.Minimum = 0;
+            green_scale.Minimum = 0;
+            blue_scale.Minimum = 0;
+
+            green_scale.Value = 41;
+            green_scale.Maximum = 46;
+            green_scale.Minimum = 36;
+
+
+            blue_scale.Value = 50;
+            blue_scale.Maximum = 77;
+            blue_scale.Minimum = 36;
+            
+
+            tone_sec.Hide();
+            tone_sec_active = false;
+        }
+
+        private void tnSc4_Click(object sender, EventArgs e)
+        {
+            toggleHSV();
+
+            red_scale.Maximum = 360;
+            green_scale.Maximum = 100;
+            blue_scale.Maximum = 100;
+
+            red_scale.Minimum = 0;
+            green_scale.Minimum = 0;
+            blue_scale.Minimum = 0;
+
+            green_scale.Value = 00;
+            green_scale.Maximum = 00;
+            green_scale.Minimum = 00;
+
+
+            blue_scale.Value = 50;
+            blue_scale.Maximum = 100;
+            blue_scale.Minimum = 00;
+            
+
+            tone_sec.Hide();
+            tone_sec_active = false;
+        }
+
+        private void tnSc5_Click(object sender, EventArgs e)
+        {
+            toggleHSV();
+
+            red_scale.Maximum = 360;
+            green_scale.Maximum = 100;
+            blue_scale.Maximum = 100;
+
+            red_scale.Minimum = 0;
+            green_scale.Minimum = 0;
+            blue_scale.Minimum = 0;
+
+            green_scale.Value = 18;
+            green_scale.Maximum = 21;
+            green_scale.Minimum = 14;
+            
+            
+            blue_scale.Value = 91;
+            blue_scale.Maximum = 96;
+            blue_scale.Minimum = 86;
+            
+
+            tone_sec.Hide();
+            tone_sec_active = false;
+        }
+
+        private void tnSc6_Click(object sender, EventArgs e)
+        {
+
+            toggleHSV();
+
+            red_scale.Maximum = 360;
+            green_scale.Maximum = 100;
+            blue_scale.Maximum = 100;
+
+            red_scale.Minimum = 0;
+            green_scale.Minimum = 0;
+            blue_scale.Minimum = 0;
+
+            green_scale.Value = 75;
+            green_scale.Maximum = 100;
+            green_scale.Minimum = 63;
+            
+            
+            blue_scale.Value = 92;
+            blue_scale.Maximum = 100;
+            blue_scale.Minimum = 82;
+            
+
+            tone_sec.Hide();
+            tone_sec_active = false;
+        }
+
+        private void tnSc7_Click(object sender, EventArgs e)
+        {
+            toggleHSV();
+
+            red_scale.Maximum = 360;
+            green_scale.Maximum = 100;
+            blue_scale.Maximum = 100;
+
+            red_scale.Minimum = 0;
+            green_scale.Minimum = 0;
+            blue_scale.Minimum = 0;
+
+            green_scale.Value = 75;
+            green_scale.Maximum = 100;
+            green_scale.Minimum = 63;
+
+            tone_sec.Hide();
+            tone_sec_active = false;
         }
 
         public float Min(float n1, float n2, float n3)
@@ -79,9 +269,16 @@ namespace colorPiker
             if (C == 0)
                 G = 0;
             else
-                G = (M / C)*100;
+                G = (M / C) * 100;
 
-            B = C*100;
+            if((S1 - V1)== 0)
+                G = S1 *100;
+
+
+            if (M == 0 && S1 != 1.0)
+                B = V1 * 100;
+            else
+                B = C*100;
 
             R1 = (int)Math.Round(R);
             G1 = (int)Math.Round(G);
@@ -135,6 +332,72 @@ namespace colorPiker
             }
         }
 
+
+        public void toggleHSV()
+        {
+            if (!ClrScheeme1)
+            {
+                toHSV.ForeColor = Color.FromArgb(20, 20, 20);
+                toHSV.BackColor = Color.FromArgb(200, 200, 200, 15);
+                toRGB.BackColor = Color.FromArgb(80, 80, 80, 100);
+                toRGB.ForeColor = Color.FromArgb(80, 80, 80);
+
+
+                cRtoH();
+                ClrScheeme1 = true;
+
+
+                label1.Text = "H";
+                label2.Text = "S";
+                label3.Text = "V";
+
+                red_scale.Maximum = 360;
+                green_scale.Maximum = 100;
+                blue_scale.Maximum = 100;
+
+                red_scale.Minimum = 0;
+                green_scale.Minimum = 0;
+                blue_scale.Minimum = 0;
+
+
+                red_scale.Value = R1;
+                green_scale.Value = G1;
+                blue_scale.Value = B1;
+            }
+        }
+
+        public void toggleRGB()
+        {
+            if (ClrScheeme1)
+            {
+                toRGB.ForeColor = Color.FromArgb(20, 20, 20);
+                toHSV.BackColor = Color.FromArgb(80, 80, 80, 100);
+                toRGB.BackColor = Color.FromArgb(200, 200, 200, 15);
+                toHSV.ForeColor = Color.FromArgb(80, 80, 80);
+
+
+                cHtoR();
+                ClrScheeme1 = false;
+
+
+                label1.Text = "R";
+                label2.Text = "G";
+                label3.Text = "B";
+
+                red_scale.Maximum = 255;
+                green_scale.Maximum = 255;
+                blue_scale.Maximum = 255;
+
+                red_scale.Minimum = 0;
+                green_scale.Minimum = 0;
+                blue_scale.Minimum = 0;
+
+                red_scale.Value = R1;
+                green_scale.Value = G1;
+                blue_scale.Value = B1;
+            }
+        }
+
         private void copy_btn_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(clr_code.Text);
@@ -143,54 +406,15 @@ namespace colorPiker
 
         private void toHSV_Click(object sender, EventArgs e)
         {
-            toHSV.ForeColor = Color.FromArgb(200, 200, 200);
-            toHSV.BackColor = Color.FromArgb(200, 200, 200,15);
-            toRGB.BackColor = Color.FromArgb(80, 80, 80,100);
-            toRGB.ForeColor = Color.FromArgb(80, 80, 80);
-
-
-            cRtoH();
-            ClrScheeme1 = true;
-            
-
-            label1.Text = "H";
-            label2.Text = "S";
-            label3.Text = "V";
-
-            red_scale.Maximum = 360;
-            green_scale.Maximum = 100;
-            blue_scale.Maximum = 100;
-
-
-            red_scale.Value   = R1;
-            green_scale.Value = G1;
-            blue_scale.Value  = B1;
+            toggleHSV();
         }
 
         private void toRGB_Click(object sender, EventArgs e)
         {
-            toRGB.ForeColor = Color.FromArgb(200, 200, 200);
-            toHSV.BackColor = Color.FromArgb(80, 80, 80, 100);
-            toRGB.BackColor = Color.FromArgb(200, 200, 200, 15);
-            toHSV.ForeColor = Color.FromArgb(80, 80, 80);
-
-
-            cHtoR();
-            ClrScheeme1 = false;
-            
-
-            label1.Text = "R";
-            label2.Text = "G";
-            label3.Text = "B";
-
-            red_scale.Maximum = 255;
-            green_scale.Maximum = 255;
-            blue_scale.Maximum = 255;
-
-            red_scale.Value = R1;
-            green_scale.Value = G1;
-            blue_scale.Value = B1;
+            toggleRGB();
         }
+
+
 
         private void rec1_TextChanged(object sender, EventArgs e)
         {
@@ -246,8 +470,8 @@ namespace colorPiker
             else
                 RGBise();
 
-            clr_view.BackColor = Color.FromArgb(R1, G1, B1);
-            clr_code.Text = "#" + R1.ToString("X2") + G1.ToString("X2") + B1.ToString("X2");
+            clr_view.BackColor = Color.FromArgb(alpha.Value,R1, G1, B1);
+            clr_code.Text = "#" + R1.ToString("X2") + G1.ToString("X2") + B1.ToString("X2") + alpha.Value.ToString("X2");
         }
     }
 }
