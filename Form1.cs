@@ -76,6 +76,7 @@ namespace colorPiker
 
             tone_sec.Hide();
             tone_sec_active = false;
+            ton_scale.Text = "jewel";
         }
 
         private void tnSc2_Click(object sender, EventArgs e)
@@ -102,6 +103,7 @@ namespace colorPiker
 
             tone_sec.Hide();
             tone_sec_active = false;
+            ton_scale.Text = "neutral";
         }
 
         private void tnSc3_Click(object sender, EventArgs e)
@@ -128,6 +130,7 @@ namespace colorPiker
 
             tone_sec.Hide();
             tone_sec_active = false;
+            ton_scale.Text = "earth";
         }
 
         private void tnSc4_Click(object sender, EventArgs e)
@@ -154,6 +157,7 @@ namespace colorPiker
 
             tone_sec.Hide();
             tone_sec_active = false;
+            ton_scale.Text = "shades";
         }
 
         private void tnSc5_Click(object sender, EventArgs e)
@@ -180,6 +184,7 @@ namespace colorPiker
 
             tone_sec.Hide();
             tone_sec_active = false;
+            ton_scale.Text = "pastel";
         }
 
         private void tnSc6_Click(object sender, EventArgs e)
@@ -207,6 +212,7 @@ namespace colorPiker
 
             tone_sec.Hide();
             tone_sec_active = false;
+            ton_scale.Text = "fluorescent";
         }
 
         private void tnSc7_Click(object sender, EventArgs e)
@@ -227,6 +233,7 @@ namespace colorPiker
 
             tone_sec.Hide();
             tone_sec_active = false;
+            ton_scale.Text = "none";
         }
 
         public float Min(float n1, float n2, float n3)
@@ -360,9 +367,9 @@ namespace colorPiker
                 blue_scale.Minimum = 0;
 
 
-                red_scale.Value = R1;
-                green_scale.Value = G1;
-                blue_scale.Value = B1;
+                red_scale.Value = Math.Abs(R1);
+                green_scale.Value =Math.Abs(G1);
+                blue_scale.Value = Math.Abs(B1);
             }
         }
 
@@ -392,9 +399,9 @@ namespace colorPiker
                 green_scale.Minimum = 0;
                 blue_scale.Minimum = 0;
 
-                red_scale.Value = R1;
-                green_scale.Value = G1;
-                blue_scale.Value = B1;
+                red_scale.Value = Math.Abs(R1);
+                green_scale.Value = Math.Abs(G1);
+                blue_scale.Value = Math.Abs(B1);
             }
         }
 

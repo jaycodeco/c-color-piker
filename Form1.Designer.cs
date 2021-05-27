@@ -31,12 +31,12 @@ namespace colorPiker
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Timer cntClk;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.red_scale = new System.Windows.Forms.TrackBar();
             this.green_scale = new System.Windows.Forms.TrackBar();
             this.blue_scale = new System.Windows.Forms.TrackBar();
             this.clr_view = new System.Windows.Forms.Panel();
             this.clr_code = new System.Windows.Forms.Label();
-            this.copy_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,16 +46,20 @@ namespace colorPiker
             this.toRGB = new System.Windows.Forms.Button();
             this.toHSV = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tone_togle = new System.Windows.Forms.Button();
             this.tone_sec = new System.Windows.Forms.Panel();
-            this.tnSc2 = new System.Windows.Forms.Button();
-            this.tnSc3 = new System.Windows.Forms.Button();
-            this.tnSc5 = new System.Windows.Forms.Button();
-            this.tnSc4 = new System.Windows.Forms.Button();
-            this.tnSc1 = new System.Windows.Forms.Button();
-            this.tnSc6 = new System.Windows.Forms.Button();
-            this.alpha = new System.Windows.Forms.TrackBar();
             this.tnSc7 = new System.Windows.Forms.Button();
+            this.tnSc1 = new System.Windows.Forms.Button();
+            this.tnSc4 = new System.Windows.Forms.Button();
+            this.tnSc6 = new System.Windows.Forms.Button();
+            this.tnSc5 = new System.Windows.Forms.Button();
+            this.tnSc3 = new System.Windows.Forms.Button();
+            this.tnSc2 = new System.Windows.Forms.Button();
+            this.tone_togle = new System.Windows.Forms.Button();
+            this.alpha = new System.Windows.Forms.TrackBar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.copy_btn = new System.Windows.Forms.Button();
+            this.ton_scale = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             cntClk = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.red_scale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.green_scale)).BeginInit();
@@ -63,6 +67,7 @@ namespace colorPiker
             this.panel1.SuspendLayout();
             this.tone_sec.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alpha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cntClk
@@ -127,27 +132,12 @@ namespace colorPiker
             this.clr_code.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clr_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clr_code.ForeColor = System.Drawing.Color.White;
-            this.clr_code.Location = new System.Drawing.Point(203, 169);
+            this.clr_code.Location = new System.Drawing.Point(180, 167);
             this.clr_code.Name = "clr_code";
-            this.clr_code.Size = new System.Drawing.Size(116, 23);
+            this.clr_code.Size = new System.Drawing.Size(136, 23);
             this.clr_code.TabIndex = 2;
             this.clr_code.Text = "#00000000";
             this.clr_code.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // copy_btn
-            // 
-            this.copy_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.copy_btn.FlatAppearance.BorderSize = 0;
-            this.copy_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.copy_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copy_btn.ForeColor = System.Drawing.Color.White;
-            this.copy_btn.Image = global::colorPiker.Properties.Resources.icons8_copy_24px;
-            this.copy_btn.Location = new System.Drawing.Point(322, 166);
-            this.copy_btn.Name = "copy_btn";
-            this.copy_btn.Size = new System.Drawing.Size(31, 29);
-            this.copy_btn.TabIndex = 3;
-            this.copy_btn.UseVisualStyleBackColor = false;
-            this.copy_btn.Click += new System.EventHandler(this.copy_btn_Click);
             // 
             // label1
             // 
@@ -247,7 +237,10 @@ namespace colorPiker
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.ton_scale);
             this.panel1.Controls.Add(this.tone_sec);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.tone_togle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(359, 0);
@@ -255,22 +248,9 @@ namespace colorPiker
             this.panel1.Size = new System.Drawing.Size(106, 315);
             this.panel1.TabIndex = 7;
             // 
-            // tone_togle
-            // 
-            this.tone_togle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.tone_togle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tone_togle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tone_togle.ForeColor = System.Drawing.Color.White;
-            this.tone_togle.Location = new System.Drawing.Point(0, 0);
-            this.tone_togle.Name = "tone_togle";
-            this.tone_togle.Size = new System.Drawing.Size(106, 23);
-            this.tone_togle.TabIndex = 0;
-            this.tone_togle.Text = "Tones";
-            this.tone_togle.UseVisualStyleBackColor = false;
-            this.tone_togle.Click += new System.EventHandler(this.tone_togle_Click);
-            // 
             // tone_sec
             // 
+            this.tone_sec.BackColor = System.Drawing.Color.Transparent;
             this.tone_sec.Controls.Add(this.tnSc7);
             this.tone_sec.Controls.Add(this.tnSc1);
             this.tone_sec.Controls.Add(this.tnSc4);
@@ -284,65 +264,20 @@ namespace colorPiker
             this.tone_sec.Size = new System.Drawing.Size(106, 244);
             this.tone_sec.TabIndex = 1;
             // 
-            // tnSc2
+            // tnSc7
             // 
-            this.tnSc2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tnSc2.FlatAppearance.BorderSize = 0;
-            this.tnSc2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tnSc2.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tnSc2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tnSc2.Location = new System.Drawing.Point(8, 40);
-            this.tnSc2.Name = "tnSc2";
-            this.tnSc2.Size = new System.Drawing.Size(86, 23);
-            this.tnSc2.TabIndex = 0;
-            this.tnSc2.Text = "neutral";
-            this.tnSc2.UseVisualStyleBackColor = false;
-            this.tnSc2.Click += new System.EventHandler(this.tnSc2_Click);
-            // 
-            // tnSc3
-            // 
-            this.tnSc3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tnSc3.FlatAppearance.BorderSize = 0;
-            this.tnSc3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tnSc3.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tnSc3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tnSc3.Location = new System.Drawing.Point(8, 74);
-            this.tnSc3.Name = "tnSc3";
-            this.tnSc3.Size = new System.Drawing.Size(86, 23);
-            this.tnSc3.TabIndex = 0;
-            this.tnSc3.Text = "earth";
-            this.tnSc3.UseVisualStyleBackColor = false;
-            this.tnSc3.Click += new System.EventHandler(this.tnSc3_Click);
-            // 
-            // tnSc5
-            // 
-            this.tnSc5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tnSc5.FlatAppearance.BorderSize = 0;
-            this.tnSc5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tnSc5.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tnSc5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tnSc5.Location = new System.Drawing.Point(8, 142);
-            this.tnSc5.Name = "tnSc5";
-            this.tnSc5.Size = new System.Drawing.Size(86, 23);
-            this.tnSc5.TabIndex = 0;
-            this.tnSc5.Text = "Pastel";
-            this.tnSc5.UseVisualStyleBackColor = false;
-            this.tnSc5.Click += new System.EventHandler(this.tnSc5_Click);
-            // 
-            // tnSc4
-            // 
-            this.tnSc4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tnSc4.FlatAppearance.BorderSize = 0;
-            this.tnSc4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tnSc4.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tnSc4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tnSc4.Location = new System.Drawing.Point(8, 108);
-            this.tnSc4.Name = "tnSc4";
-            this.tnSc4.Size = new System.Drawing.Size(86, 23);
-            this.tnSc4.TabIndex = 0;
-            this.tnSc4.Text = "shades";
-            this.tnSc4.UseVisualStyleBackColor = false;
-            this.tnSc4.Click += new System.EventHandler(this.tnSc4_Click);
+            this.tnSc7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tnSc7.FlatAppearance.BorderSize = 0;
+            this.tnSc7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tnSc7.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.tnSc7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tnSc7.Location = new System.Drawing.Point(8, 210);
+            this.tnSc7.Name = "tnSc7";
+            this.tnSc7.Size = new System.Drawing.Size(86, 23);
+            this.tnSc7.TabIndex = 1;
+            this.tnSc7.Text = "none";
+            this.tnSc7.UseVisualStyleBackColor = false;
+            this.tnSc7.Click += new System.EventHandler(this.tnSc7_Click);
             // 
             // tnSc1
             // 
@@ -359,6 +294,21 @@ namespace colorPiker
             this.tnSc1.UseVisualStyleBackColor = false;
             this.tnSc1.Click += new System.EventHandler(this.tnSc1_Click);
             // 
+            // tnSc4
+            // 
+            this.tnSc4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tnSc4.FlatAppearance.BorderSize = 0;
+            this.tnSc4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tnSc4.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tnSc4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tnSc4.Location = new System.Drawing.Point(8, 108);
+            this.tnSc4.Name = "tnSc4";
+            this.tnSc4.Size = new System.Drawing.Size(86, 23);
+            this.tnSc4.TabIndex = 0;
+            this.tnSc4.Text = "shades";
+            this.tnSc4.UseVisualStyleBackColor = false;
+            this.tnSc4.Click += new System.EventHandler(this.tnSc4_Click);
+            // 
             // tnSc6
             // 
             this.tnSc6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -374,6 +324,65 @@ namespace colorPiker
             this.tnSc6.UseVisualStyleBackColor = false;
             this.tnSc6.Click += new System.EventHandler(this.tnSc6_Click);
             // 
+            // tnSc5
+            // 
+            this.tnSc5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tnSc5.FlatAppearance.BorderSize = 0;
+            this.tnSc5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tnSc5.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tnSc5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tnSc5.Location = new System.Drawing.Point(8, 142);
+            this.tnSc5.Name = "tnSc5";
+            this.tnSc5.Size = new System.Drawing.Size(86, 23);
+            this.tnSc5.TabIndex = 0;
+            this.tnSc5.Text = "Pastel";
+            this.tnSc5.UseVisualStyleBackColor = false;
+            this.tnSc5.Click += new System.EventHandler(this.tnSc5_Click);
+            // 
+            // tnSc3
+            // 
+            this.tnSc3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tnSc3.FlatAppearance.BorderSize = 0;
+            this.tnSc3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tnSc3.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tnSc3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tnSc3.Location = new System.Drawing.Point(8, 74);
+            this.tnSc3.Name = "tnSc3";
+            this.tnSc3.Size = new System.Drawing.Size(86, 23);
+            this.tnSc3.TabIndex = 0;
+            this.tnSc3.Text = "earth";
+            this.tnSc3.UseVisualStyleBackColor = false;
+            this.tnSc3.Click += new System.EventHandler(this.tnSc3_Click);
+            // 
+            // tnSc2
+            // 
+            this.tnSc2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tnSc2.FlatAppearance.BorderSize = 0;
+            this.tnSc2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tnSc2.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tnSc2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tnSc2.Location = new System.Drawing.Point(8, 40);
+            this.tnSc2.Name = "tnSc2";
+            this.tnSc2.Size = new System.Drawing.Size(86, 23);
+            this.tnSc2.TabIndex = 0;
+            this.tnSc2.Text = "neutral";
+            this.tnSc2.UseVisualStyleBackColor = false;
+            this.tnSc2.Click += new System.EventHandler(this.tnSc2_Click);
+            // 
+            // tone_togle
+            // 
+            this.tone_togle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tone_togle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tone_togle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tone_togle.ForeColor = System.Drawing.Color.White;
+            this.tone_togle.Location = new System.Drawing.Point(0, 0);
+            this.tone_togle.Name = "tone_togle";
+            this.tone_togle.Size = new System.Drawing.Size(106, 23);
+            this.tone_togle.TabIndex = 0;
+            this.tone_togle.Text = "Tones";
+            this.tone_togle.UseVisualStyleBackColor = false;
+            this.tone_togle.Click += new System.EventHandler(this.tone_togle_Click);
+            // 
             // alpha
             // 
             this.alpha.AutoSize = false;
@@ -385,20 +394,54 @@ namespace colorPiker
             this.alpha.Tag = "";
             this.alpha.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
-            // tnSc7
+            // pictureBox1
             // 
-            this.tnSc7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tnSc7.FlatAppearance.BorderSize = 0;
-            this.tnSc7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tnSc7.Font = new System.Drawing.Font("Myriad Pro Cond", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.tnSc7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tnSc7.Location = new System.Drawing.Point(8, 210);
-            this.tnSc7.Name = "tnSc7";
-            this.tnSc7.Size = new System.Drawing.Size(86, 23);
-            this.tnSc7.TabIndex = 1;
-            this.tnSc7.Text = "none";
-            this.tnSc7.UseVisualStyleBackColor = false;
-            this.tnSc7.Click += new System.EventHandler(this.tnSc7_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::colorPiker.Properties.Resources.colorizer;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(106, 292);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // copy_btn
+            // 
+            this.copy_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.copy_btn.FlatAppearance.BorderSize = 0;
+            this.copy_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.copy_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copy_btn.ForeColor = System.Drawing.Color.White;
+            this.copy_btn.Image = global::colorPiker.Properties.Resources.icons8_copy_24px;
+            this.copy_btn.Location = new System.Drawing.Point(322, 166);
+            this.copy_btn.Name = "copy_btn";
+            this.copy_btn.Size = new System.Drawing.Size(31, 29);
+            this.copy_btn.TabIndex = 3;
+            this.copy_btn.UseVisualStyleBackColor = false;
+            this.copy_btn.Click += new System.EventHandler(this.copy_btn_Click);
+            // 
+            // ton_scale
+            // 
+            this.ton_scale.AutoSize = true;
+            this.ton_scale.BackColor = System.Drawing.Color.Transparent;
+            this.ton_scale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ton_scale.Location = new System.Drawing.Point(24, 295);
+            this.ton_scale.Name = "ton_scale";
+            this.ton_scale.Size = new System.Drawing.Size(40, 17);
+            this.ton_scale.TabIndex = 3;
+            this.ton_scale.Text = "none";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(5, 282);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Tone Scale :";
             // 
             // Form1
             // 
@@ -422,17 +465,19 @@ namespace colorPiker
             this.Controls.Add(this.blue_scale);
             this.Controls.Add(this.green_scale);
             this.Controls.Add(this.red_scale);
-            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colorizer";
             ((System.ComponentModel.ISupportInitialize)(this.red_scale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.green_scale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blue_scale)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tone_sec.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.alpha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,6 +510,9 @@ namespace colorPiker
         private System.Windows.Forms.Button tnSc6;
         private System.Windows.Forms.TrackBar alpha;
         private System.Windows.Forms.Button tnSc7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ton_scale;
+        private System.Windows.Forms.Label label4;
     }
 }
 

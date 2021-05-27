@@ -83,5 +83,11 @@
   <ItemGroup>
     <None Include="icons8_copy_24px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="n_tube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="colorizer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
